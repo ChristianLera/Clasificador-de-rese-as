@@ -13,6 +13,8 @@
 
 Analiza reseñas de productos y las clasifica como **POSITIVAS** o **NEGATIVAS** usando Machine Learning.
 
+Además, incluye un **Generador Masivo de Reseñas** para crear datasets de entrenamiento bilingües.
+
 | Tu reseña | El programa dice |
 |-----------|------------------|
 | "Este producto es excelente, lo recomiendo" | 🟢 POSITIVA (95% confianza) |
@@ -20,21 +22,50 @@ Analiza reseñas de productos y las clasifica como **POSITIVAS** o **NEGATIVAS**
 
 ---
 
-## ✨ Características
+## 🛠️ Componentes del proyecto
 
-- 🧠 **Ensemble Learning** - Combina 4 modelos que votan para decidir
-- ⚡ **Sin congelamiento** - Usa hilos, la interfaz siempre responde
-- 📁 **Múltiples datasets** - Combina varios CSV para entrenar
-- 📂 **Análisis por lotes** - Analiza múltiples archivos a la vez
-- 💾 **Caché inteligente** - Segundo entrenamiento mucho más rápido
-- 🌐 **Multilingüe** - Detecta español e inglés automáticamente
-- ⏱️ **Tiempos estimados** - Muestra tiempo restante en tiempo real
-- 🗑️ **Gestión de caché** - Visualiza y elimina archivos de caché
-- 📤 **Exportación a CSV** - Guarda resultados para analizar en Excel
+| Componente | Descripción |
+|------------|-------------|
+| **Clasificador** | Clasifica reseñas como positivas/negativas usando Ensemble Learning |
+| **Generador de reseñas** | Crea datasets masivos bilingües (español/inglés) con vocabulario extremo |
 
 ---
 
-## 🎯 Niveles de precisión
+## 📚 Generador Masivo de Reseñas
+
+### Características del generador
+
+- **Bilingüe**: Español e inglés
+- **Vocabulario extremo**: Más de 2500 adjetivos por idioma
+- **Combinaciones infinitas**: Millones de reseñas únicas posibles
+- **Personalizable**: Elige idioma, número de reseñas y proporción positivo/negativo
+
+### Como usar el generador
+
+```bash
+python CreadorMasivoResenas.py
+```
+
+Te preguntará:
+- 📝 ¿Cuántas reseñas quieres generar?
+- 🌐 ¿Idioma? (espanol/ingles/ambos)
+
+El generador creará un archivo CSV con las reseñas y calificaciones.
+
+### Estadísticas del generador
+
+| Elemento | Español | Inglés |
+|----------|---------|--------|
+| Adjetivos positivos | ~2500 | ~2500 |
+| Adjetivos negativos | ~2500 | ~2000 |
+| Sustantivos | ~3000 | ~3000 |
+| Verbos | ~200 | ~200 |
+| Conectores | ~50 | ~50 |
+| **Combinaciones posibles** | **> 10 millones** | **> 10 millones** |
+
+---
+
+## 🎯 Clasificador: Niveles de precisión
 
 | Nivel | Modelos | Precisión | Tiempo |
 |-------|---------|-----------|--------|
@@ -58,34 +89,11 @@ Cuando entrenas un nivel, los inferiores se actualizan automaticamente:
 
 ---
 
-## 🚀 Instalacion
-
-```bash
-git clone https://github.com/TU_USUARIO/amazon-review-analyzer.git
-cd amazon-review-analyzer
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-python main.py
-```
-
----
-
-## 📖 Como usar
-
-| Paso | Que hacer |
-|------|-----------|
-| 1 | Boton "AÑADIR ARCHIVOS" → selecciona uno o varios CSV |
-| 2 | Selecciona nivel (recomendado: ENSEMBLE) → "ENTRENAR MODELO" |
-| 3 | Pestaña "Analizar Archivos CSV" → añade archivos → "ANALIZAR TODOS" |
-| 4 | Pestaña "Resultados" → "EXPORTAR RESULTADOS" |
-
----
-
-## 📂 Estructura
+## 📂 Estructura del proyecto
 
 ```
 amazon_review_classifier/
+│
 ├── data/                      # Tus datasets
 ├── models/                    # Modelos guardados
 │   └── cache/                 # Cache de preprocesamiento
@@ -96,10 +104,44 @@ amazon_review_classifier/
 │   ├── predict.py             # Predicciones
 │   ├── dataset_manager.py     # Gestion de datasets
 │   └── cache_manager.py       # Gestion de cache
+├── CreadorMasivoResenas.py    # Generador de reseñas
 ├── requirements.txt
 ├── README.md
-└── main.py
+└── main.py                    # Clasificador principal
 ```
+
+---
+
+## 🚀 Instalacion
+
+```bash
+git clone https://github.com/TU_USUARIO/amazon-review-analyzer.git
+cd amazon-review-analyzer
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Para usar el clasificador:
+```bash
+python main.py
+```
+
+### Para usar el generador de reseñas:
+```bash
+python CreadorMasivoResenas.py
+```
+
+---
+
+## 📖 Como usar el clasificador
+
+| Paso | Que hacer |
+|------|-----------|
+| 1 | Boton "AÑADIR ARCHIVOS" → selecciona uno o varios CSV |
+| 2 | Selecciona nivel (recomendado: ENSEMBLE) → "ENTRENAR MODELO" |
+| 3 | Pestaña "Analizar Archivos CSV" → añade archivos → "ANALIZAR TODOS" |
+| 4 | Pestaña "Resultados" → "EXPORTAR RESULTADOS" |
 
 ---
 
@@ -129,6 +171,9 @@ Mas modelos = mas precision, pero mas tiempo.
 
 **¿Puedo analizar varios archivos a la vez?**
 Si, en la pestaña "Analizar Archivos CSV".
+
+**¿Para qué sirve el generador de reseñas?**
+Para crear datasets de entrenamiento personalizados sin necesidad de descargar datos externos.
 
 ---
 
