@@ -1,0 +1,25 @@
+# Amazon Review Analyzer - Dependencias
+
+# Procesamiento de datos
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+scipy>=1.10.0
+
+# Procesamiento de lenguaje natural
+nltk>=3.8.0
+
+# Persistencia de modelos
+joblib>=1.3.0
+
+# Para leer archivos Excel
+openpyxl>=3.1.0
+
+# Para lectura de Parquet (descomentar si lo necesitas)
+# pyarrow>=12.0.0
+
+# Visualización (opcional)
+matplotlib>=3.7.0
+seaborn>=0.12.0
