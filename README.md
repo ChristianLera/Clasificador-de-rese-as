@@ -38,7 +38,7 @@ Además, incluye un **Generador Masivo de Reseñas** para crear datasets de entr
 - **Bilingüe**: Español e inglés
 - **Vocabulario extremo**: Más de 2500 adjetivos por idioma
 - **Combinaciones infinitas**: Millones de reseñas únicas posibles
-- **Personalizable**: Elige idioma, número de reseñas y proporción positivo/negativo
+- **Personalizable**: Elige idioma, número de reseñas. La proporción positivo/negativo es aleatoria
 
 ### Como usar el generador
 
