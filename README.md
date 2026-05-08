@@ -1,3 +1,9 @@
+<!-- 
+  LinkedIn Preview: 
+  Título: X-sentiment-analyzer - Analizador de sentimientos con BERT
+  Descripción: Proyecto de IA para clasificar tweets en español (87% precisión)
+-->
+
 # 🎯 Amazon Review Analyzer
 
 **Clasificador profesional de reseñas con Ensemble Learning | 95-97% de precisión**
