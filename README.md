@@ -1,3 +1,7 @@
+---
+social_image: https://github.com/ChristianLera/Clasificador-de-rese-as/blob/main/captura.png
+---
+
 # 🎯 Amazon Review Analyzer
 
 **Clasificador profesional de reseñas con Ensemble Learning | 95-97% de precisión**
